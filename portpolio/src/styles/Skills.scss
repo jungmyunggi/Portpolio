@@ -1,0 +1,16 @@
+.skill-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  .skill-element {
+    border: 1px solid black;
+    p {
+      font-size: 20px;
+    }
+    .basic {
+      img {
+        max-width: 150px;
+        max-height: 150px;
+      }
+    }
+  }
+}
