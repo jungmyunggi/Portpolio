@@ -1,3 +1,16 @@
 * {
   margin: 0 auto;
 }
+.nav {
+  position: fixed;
+  top: 10px;
+  width: 100%;
+  z-index: 1000;
+}
+.content {
+  margin: 0 auto;
+  margin-top: 60px;
+}
+section {
+  margin-bottom: 50px;
+}

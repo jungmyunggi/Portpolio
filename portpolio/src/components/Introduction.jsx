@@ -1,6 +1,6 @@
 import "../styles/Introduction.scss";
-import { useState, useEffect } from "react";
-const Introduction = () => {
+import { useState, useEffect, forwardRef } from "react";
+const Introduction = forwardRef((props, ref) => {
   const completeIntro = "안녕하세요 :)\n배움을 즐기는 개발자 정명기 입니다";
   const [intro, setIntro] = useState("");
   const [count, setCount] = useState(0);
@@ -34,15 +34,17 @@ const Introduction = () => {
   }, [count, isTyping]);
 
   return (
-    <div className="Intro">
-      <header>
-        <p className="Intro-intro" style={{ whiteSpace: "pre-line" }}>
-          {intro}
-        </p>
-        <button>더 알아보기▼</button>
-      </header>
-    </div>
+    <section>
+      <div className="Intro" ref={(introRef) => (ref.current[0] = introRef)}>
+        <header>
+          <p className="Intro-intro" style={{ whiteSpace: "pre-line" }}>
+            {intro}
+          </p>
+          <button>더 알아보기▼</button>
+        </header>
+      </div>
+    </section>
   );
-};
+});
 
 export default Introduction;
